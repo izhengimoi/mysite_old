@@ -82,7 +82,7 @@
                                             <p class="blog-info">
                                                 <span class="glyphicon glyphicon-user"></span> {{ like.user.username }}
                                                 <span class="glyphicon glyphicon-time"></span> {{ like.like_time|date:"Y-m-d H:i:s" }}
-                                                <span class="glyphicon glyphicon-heart-empty" style="padding-left:80px;"></span>
+                                                <span class="glyphicon glyphicon-heart-empty" style="padding-right:20px;float: right;"></span>
                                             </p>
                                         </div>
                                     {% empty %}
@@ -127,7 +127,7 @@
                     var like_html = '<p>' + '<span class="glyphicon glyphicon-user">' + '</span>' +
                                     '&nbsp;' + data['username'] + '&nbsp;' +
                                     '<span class="glyphicon glyphicon-time">' + '</span>' + '&nbsp;' +data['like_time'] + 
-                                    ' <span class="glyphicon glyphicon-heart-empty" style="padding-left:80px;"></span>' + '</p>';
+                                    ' <span class="glyphicon glyphicon-heart-empty" style="padding-right:20px;float: right;"></span>' + '</p>';
                     $("#like_list").prepend(like_html);
                     $("#wudianzan").text('');
                     $("#shuliang2").text(data['like_number'])
