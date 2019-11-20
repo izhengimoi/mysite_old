@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+    登录
+{% endblock %}
+
+{% block header_exends %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block nav_login_active %}active{% endblock %}
+
+{% block content %}
+    <div class="login-content">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">登录</h3>
+            </div>
+            <div class="panel-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {% for field in login_form %}
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        <p class="text-danger">{{ fied.errors.as_text }}</p>
+                    {% endfor %}
+                    <span class="pull-left text-danger">{{ login_form.non_field_errors }}</span>
+                    <div class="anliu">
+                        <input class="btn btn-default btn-block" type="submit" value="登录">
+                    </div>
+                </form>
+                <p class="text-center" style="margin-top: 0.5em;">
+                    等于说还没得账号？快卡
+                    <a href="{% url 'register' %}?from={{ request.get_full_path }}">
+                        注册
+                    </a>哦!
+                </p>    
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}
+

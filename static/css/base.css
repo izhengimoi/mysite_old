@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin-top: 70px!important;
+}
+div.footer{
+    height: 80px;
+    width: 100%;
+    background-color: #eee;
+    color: #555;
+    position: fixed;
+    bottom: 0;
+}
