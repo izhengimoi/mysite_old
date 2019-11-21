@@ -30,6 +30,14 @@
                 <ul class="nav navbar-nav">
                     <li class="{% block nav_home_active %}{% endblock %}"><a href="{% url 'home' %}">首页</a></li>
                     <li class="{% block nav_blog_listactive %}{% endblock %}"><a href="{% url 'blog_list' %}">博客</a></li>
+                    <li class="dropdown {% block nav_game_active %}{% endblock %}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">游戏<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="{% url 'tanchishe' %}">贪吃蛇</a></li>
+                          <li><a href="{% url 'duobilizi' %}">躲避粒子</a></li>
+                          <li><a href="{% url 'aircraftwars' %}">飞机大战</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}

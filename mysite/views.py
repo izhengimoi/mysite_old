@@ -18,9 +18,6 @@ def home(request):
     context['dates'] = dates
     return render(request, "home.html", context)
 
-def game(request):
-    return render(request, "game.html")
-
 def login(request):
     if request.method == 'POST':
         login_form = LoginForm(request.POST)
